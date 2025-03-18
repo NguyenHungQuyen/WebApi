@@ -1,8 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using WebApi.Models;
 
-namespace WebApi.Controllers
-{
+namespace WebApi.Controllers;
     [ApiController]
     [Route("api/[controller]")]
     public class CategoryController : BaseController
@@ -29,5 +28,23 @@ namespace WebApi.Controllers
         {
             return Provider.Category.Add(obj);
         }
+
+        [HttpDelete("{id}")]
+        public int Delete(short id)
+        {
+            return Provider.Category.Delete(id);
+        }
+
+        [HttpPut]
+        public int Edit(Category obj)
+        {
+            return Provider.Category.Edit(obj);
+        }
+
+        [HttpGet("count")]
+        public int Count()
+        {
+            return Provider.Category.Count();
+        }
+
     }
-}

@@ -1,7 +1,6 @@
 using System.Data;
 
-namespace WebApi.Models
-{
+namespace WebApi.Models;
     public abstract class BaseRepository
     {
         protected IDbConnection connection;
@@ -11,4 +10,3 @@ namespace WebApi.Models
             this.connection = connection;
         }
     }
-}
