@@ -12,9 +12,22 @@ namespace WebApi.Controllers
         {
             return "Welcome Ladies and Gentlemen";
         }
-        public IEnumerable<Category> GetCategories(){
-            return Provider.Category.GetCategories();
-}
 
+        public IEnumerable<Category> GetCategories()
+        {
+            return Provider.Category.GetCategories();
+        }
+
+        [HttpGet("{id}")]
+        public Category? GetCategory(short id)
+        {
+            return Provider.Category.GetCategory(id);
+        }
+
+        [HttpPost]
+        public int Add(Category obj)
+        {
+            return Provider.Category.Add(obj);
+        }
     }
 }
